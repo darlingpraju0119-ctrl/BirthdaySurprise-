@@ -1,70 +1,51 @@
-# 🎂 Happy Birthday Chandana ❤️
+# 💖 Birthday Surprise for Baby Maa
 
-## A Special Birthday Surprise for My Baby Maa
+A personal interactive birthday website created specially for **Chandana**, lovingly called **Baby Maa**.
 
-This is a personal interactive birthday website created specially for **Chandana**, whom I lovingly call **Baby Maa**.
+She calls me **Pucchu**. ❤️
 
-The website is designed around our **4–5 years of memories, friendship, love, laughter, fights, care and unforgettable moments**.
+This website is a small digital surprise celebrating our beautiful bond of around **4–5 years**.
 
----
-
-## ❤️ About This Website
-
-This isn't just a birthday webpage.
-
-It is a small interactive journey through our bond.
-
-Chandana has been much more than one person in my life.
+She has been more than just a friend to me.
 
 She has been:
 
-- ❤️ My friend
-- 🥹 Like my mother
-- 📚 My teacher
-- 🧭 My guide
-- 😂 My partner in crazy moments
-- 💕 My cute-couple partner
-- 🌸 Someone who has been an important part of my life
-
-I call her **Baby Maa**.
-
-She calls me **Pucchu**.
+- My friend 🤝
+- My mother ❤️
+- My teacher 📚
+- My support 🫶
+- My favourite person 💖
+- My cute partner in countless memories 🥹
 
 ---
 
 ## ✨ Features
 
-- 🎁 Interactive gift opening
-- 🔐 Secret PIN protection
-- 🕐 Live clock
-- 🎂 Birthday cake interaction
-- 🔥 Candle blowing
-- 🎉 Confetti animation
-- ❤️ Floating hearts
-- 📸 Personal photo memories
-- 🎈 Interactive birthday wishes
-- 🧩 Photo puzzle
-- ✨ Scratch-card surprise
-- 💌 Personal emotional birthday letter
-- 🎵 Background music
-- 📱 Mobile-friendly design
-- 🌐 GitHub Pages compatible
+The website contains several interactive stages:
+
+1. 🎁 Birthday Gift Opening
+2. 🔐 Secret PIN
+3. 🎂 Birthday Wish & Candle
+4. 📸 Personal Memories
+5. 🎈 Birthday Wishes
+6. 🧩 Photo Puzzle
+7. ✨ Scratch Card
+8. 💌 Personal Birthday Letter
 
 ---
 
-## 📁 Repository Structure
+## 📁 Files
 
 ```text
 birthday-gift/
-
+│
 ├── index.html
 ├── style.css
 ├── README.md
 ├── README.txt
-├── song.mp3
 │
-└── photos/
-    ├── photo1.jpg
-    ├── photo2.jpg
-    ├── photo3.jpg
-    └── photo4.jpg
+├── PerfectSONG.mp3
+├── image1.jpg
+├── image2.jpg
+├── image3.jpg
+└── image4.jpg
