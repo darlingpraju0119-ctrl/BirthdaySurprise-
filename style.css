@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, #4b123f, #160817 70%);
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.screen {
+  display: none;
+  min-height: 100vh;
+  padding: 30px 20px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.screen.active {
+  display: flex;
+  animation: fadeIn 0.8s ease;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+h2 {
+  color: #ff9acb;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #f0c8df;
+  line-height: 1.7;
+  margin: 8px 0;
+}
+
+button {
+  margin-top: 25px;
+  padding: 13px 25px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff3377, #ff75ad);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(255, 51, 119, .4);
+}
+
+button:active {
+  transform: scale(.95);
+}
+
+.gift {
+  font-size: 90px;
+  animation: pulse 1.5s infinite;
+  margin-bottom: 20px;
+}
+
+.cake {
+  font-size: 90px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  margin: 20px;
+}
+
+.gallery {
+  width: 100%;
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid rgba(255,255,255,.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,.4);
+}
+
+.letter {
+  width: 100%;
+  max-width: 380px;
+  background: #fff8ee;
+  color: #3d2530;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.5);
+}
+
+.letter h1 {
+  color: #a40046;
+}
+
+.letter h2 {
+  color: #d63375;
+  font-size: 1.2rem;
+}
+
+.letter p {
+  color: #4b343d;
+  text-align: left;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255,100,170,.35) 1px, transparent 1px);
+  background-size: 35px 35px;
+  animation: moveHearts 12s linear infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%,100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes moveHearts {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 500px;
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .gallery img {
+    height: 170px;
+  }
+
+  .letter {
+    padding: 22px;
+  }
+}
