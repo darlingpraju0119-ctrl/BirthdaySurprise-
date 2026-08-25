@@ -1,303 +1,174 @@
-
----
-
-# 4. `README.txt`
+`README.txt`
 
 ```text
-========================================================
-          HAPPY BIRTHDAY CHANDANA ❤️
-========================================================
+==================================================
+       💖 BIRTHDAY SURPRISE FOR BABY MAA 💖
+==================================================
 
-A SPECIAL BIRTHDAY SURPRISE FOR MY BABY MAA
+Name:
+CHANDANA
 
-
-ABOUT
---------------------------------------------------------
-
-This is a personal interactive birthday website created
-specially for Chandana.
-
-I call her:
-
+Special Name:
 BABY MAA ❤️
 
 She calls me:
-
-PUCCHU ❤️
-
-
-OUR STORY
---------------------------------------------------------
-
-We have been together for around 4–5 years.
-
-During these years, we have shared:
-
-- Friendship
-- Love
-- Cute-couple moments
-- Laughter
-- Fights
-- Care
-- Crazy memories
-- Serious conversations
-- Life lessons
-- Beautiful moments
+PUCCHU 🫶
 
 
-WHAT SHE MEANS TO ME
---------------------------------------------------------
+==================================================
+ABOUT THIS WEBSITE
+==================================================
 
-Chandana has been much more than just a person in my life.
+This is a personal interactive birthday website
+created specially for Chandana.
+
+We have been together for around 4–5 years and
+have shared countless memories, laughter, fights,
+care, friendship and beautiful moments.
+
+She has been much more than just a friend.
 
 She has been:
 
-My friend ❤️
-
-Like my mother 🥹
-
-My teacher 📚
-
-My guide 🧭
-
-My comfort person ❤️
-
-My partner in crazy moments 😂
-
-My cute-couple partner 💕
-
-And someone who has created memories that I will
-always carry with me.
+Friend
+Mother
+Teacher
+Support
+Best Person
+Cute Partner
+My Baby Maa ❤️
 
 
-FILES
---------------------------------------------------------
+==================================================
+WEBSITE FEATURES
+==================================================
+
+1. 🎁 Gift Opening
+2. 🔐 Secret PIN
+3. 🎂 Birthday Candle
+4. 📸 Photo Memories
+5. 🎈 Birthday Wishes
+6. 🧩 Photo Puzzle
+7. ✨ Scratch Card
+8. 💌 Personal Birthday Letter
+
+
+==================================================
+FILES REQUIRED
+==================================================
 
 index.html
-Main website file.
-
 style.css
-Website design and animations.
-
-song.mp3
-Background birthday song.
-
-photos/photo1.jpg
-Memory photo 1.
-
-photos/photo2.jpg
-Memory photo 2.
-
-photos/photo3.jpg
-Memory photo 3.
-
-photos/photo4.jpg
-Memory photo 4.
-
 README.md
-GitHub project information.
-
 README.txt
-This file.
+song.mp3
+photo1.jpg
+photo2.jpg
+photo3.jpg
+photo4.jpg
 
 
-FOLDER STRUCTURE
---------------------------------------------------------
+==================================================
+IMPORTANT
+==================================================
 
-birthday-gift/
+All photos and music must be uploaded into the
+same GitHub repository folder as index.html.
 
-    index.html
-    style.css
-    README.md
-    README.txt
-    song.mp3
-
-    photos/
-        photo1.jpg
-        photo2.jpg
-        photo3.jpg
-        photo4.jpg
-
-
-SECRET PIN
---------------------------------------------------------
-
-Current PIN:
-
-2329
-
-To change the PIN, edit this line inside index.html:
-
-const CORRECT_PIN = "2329";
-
-
-PHOTOS
---------------------------------------------------------
-
-Create a folder called:
-
-photos
-
-Upload your four photos using these exact names:
+Use these exact names:
 
 photo1.jpg
 photo2.jpg
 photo3.jpg
 photo4.jpg
 
-If you use different names, update the image paths
-inside index.html.
-
-
-MUSIC
---------------------------------------------------------
-
-Upload your selected song into the main repository.
-
-Rename it:
-
 song.mp3
 
-The website will automatically load it.
+
+==================================================
+DEFAULT PIN
+==================================================
+
+1234
 
 
-FEATURES
---------------------------------------------------------
+To change the PIN:
 
-🎁 Gift opening
+Open index.html.
 
-🔐 Secret PIN
+Find:
 
-🕐 Live clock
+const correctPin = "1234";
 
-🎂 Birthday cake
-
-🔥 Candle interaction
-
-🎉 Confetti
-
-❤️ Floating hearts
-
-📸 Photo memories
-
-🎈 Birthday wishes
-
-🧩 Photo puzzle
-
-✨ Scratch card
-
-💌 Personal birthday letter
-
-🎵 Background music
-
-📱 Mobile responsive design
+Change 1234 to your preferred PIN.
 
 
+==================================================
 GITHUB PAGES
---------------------------------------------------------
+==================================================
 
-1. Create a public GitHub repository.
-
-Example:
-
-birthday-gift
-
+1. Create a new GitHub repository.
 
 2. Upload:
 
-index.html
-style.css
-README.md
-README.txt
-song.mp3
+   index.html
+   style.css
+   README.md
+   README.txt
 
+3. Upload:
 
-3. Create:
+   song.mp3
+   photo1.jpg
+   photo2.jpg
+   photo3.jpg
+   photo4.jpg
 
-photos
+4. Go to:
 
+   Settings → Pages
 
-4. Upload:
+5. Select:
 
-photo1.jpg
-photo2.jpg
-photo3.jpg
-photo4.jpg
-
-
-5. Go to:
-
-Repository
-→ Settings
-→ Pages
-
+   Deploy from a branch
 
 6. Select:
 
-Deploy from a branch
-
+   main
 
 7. Select:
 
-main
+   /root
+
+8. Click Save.
+
+GitHub will generate your website link.
 
 
-8. Select:
-
-/root
-
-
-9. Click:
-
-Save
-
-
-Your website will be available at a URL similar to:
-
-https://YOUR-USERNAME.github.io/birthday-gift/
-
-
-IMPORTANT
---------------------------------------------------------
-
-Keep the filenames exactly the same.
-
-Especially:
-
-index.html
-style.css
-song.mp3
-
-and:
-
-photos/photo1.jpg
-photos/photo2.jpg
-photos/photo3.jpg
-photos/photo4.jpg
-
-
+==================================================
 FINAL MESSAGE
---------------------------------------------------------
+==================================================
 
-Happy Birthday, Baby Maa! 🎂❤️
+Happy Birthday Baby Maa. ❤️
 
-Thank you for being my friend,
-my teacher,
-my guide,
-my support,
-and sometimes even my mother.
+Thank you for being my friend.
 
-Thank you for all the laughter,
-all the fights,
-all the memories,
-and all the moments that made these
-4–5 years unforgettable.
+Thank you for being like my mother.
 
-No matter where life takes us,
-you will always be one of the most
-beautiful chapters of my life.
+Thank you for being my teacher.
 
-With all the love, memories and gratitude,
+Thank you for caring for me.
 
-YOUR PUCCHU ❤️
-========================================================
+Thank you for all the memories.
+
+Thank you for staying beside your Pucchu.
+
+No matter how much time passes,
+I hope our bond always remains special.
+
+With lots of love,
+
+Your Pucchu 🫶
+
+
+==================================================
