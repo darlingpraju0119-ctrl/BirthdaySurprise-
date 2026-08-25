@@ -1,70 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0,
+                   maximum-scale=1.0, user-scalable=no">
 
-  <title>Happy Birthday Chandana ❤️</title>
+    <title>For Baby Maa 💖</title>
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
-
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
 </head>
 
 <body>
 
-<!-- =====================================================
-     BACKGROUND MUSIC
-===================================================== -->
-
-<audio id="bg-audio" loop preload="auto">
-  <source src="song.mp3" type="audio/mpeg">
+<!-- MUSIC -->
+<audio id="bgMusic" loop preload="auto">
+    <source src="song.mp3" type="audio/mpeg">
 </audio>
 
+<!-- BACKGROUND HEARTS -->
+<canvas id="heartsCanvas"></canvas>
 
-<!-- =====================================================
-     FLOATING HEARTS
-===================================================== -->
-
-<canvas id="hearts-canvas"></canvas>
-
-
-<!-- =====================================================
-     CURTAINS
-===================================================== -->
-
-<div class="curtain-container" id="curtain-container">
-  <div class="curtain left"></div>
-  <div class="curtain right"></div>
-</div>
+<!-- CONFETTI -->
+<canvas id="confettiCanvas"></canvas>
 
 
 <!-- =====================================================
-     SCREEN 1 - GIFT
+     SCREEN 1
 ===================================================== -->
 
-<section class="screen active" id="screen-1">
+<section class="screen active" id="screen1">
 
-  <div class="small-heart">❤️</div>
+    <div class="small-label">A LITTLE SURPRISE FOR YOU ✨</div>
 
-  <h1>A Surprise Awaits You...</h1>
+    <h1 class="main-title">
+        Hey Baby Maa 💖
+    </h1>
 
-  <p class="subtext">
-    ✦ Something very special, made only for you ✦
-  </p>
+    <p class="subtitle">
+        Someone has prepared something special for you...
+    </p>
 
-  <div class="gift-box" onclick="goToScreen(2)">
-    🎁
-  </div>
+    <div class="gift" id="giftButton">
+        🎁
+    </div>
 
-  <p class="subtext gift-text">
-    Tap the gift to open
-  </p>
+    <p class="tap-text">
+        Tap the gift to open
+    </p>
 
 </section>
 
@@ -73,50 +62,46 @@
      SCREEN 2 - PIN
 ===================================================== -->
 
-<section class="screen" id="screen-2">
+<section class="screen" id="screen2">
 
-  <div class="clock-display" id="live-clock">
-    00:00
-  </div>
+    <div class="lock-icon">🔐</div>
 
-  <p class="birthday-label">
-    Birthday Surprise 💖
-  </p>
+    <h2>Secret Birthday Door</h2>
 
-  <h2>Only someone special can enter 🔐</h2>
+    <p class="subtitle">
+        Only Baby Maa can unlock this 💕
+    </p>
 
-  <p class="subtext">
-    Enter the secret code ✨
-  </p>
+    <div class="pin-dots">
+        <span class="dot" id="dot0"></span>
+        <span class="dot" id="dot1"></span>
+        <span class="dot" id="dot2"></span>
+        <span class="dot" id="dot3"></span>
+    </div>
 
-  <div class="pin-dots">
+    <div class="keypad">
 
-    <div class="dot" id="dot-0"></div>
-    <div class="dot" id="dot-1"></div>
-    <div class="dot" id="dot-2"></div>
-    <div class="dot" id="dot-3"></div>
+        <button class="key" data-key="1">1</button>
+        <button class="key" data-key="2">2</button>
+        <button class="key" data-key="3">3</button>
 
-  </div>
+        <button class="key" data-key="4">4</button>
+        <button class="key" data-key="5">5</button>
+        <button class="key" data-key="6">6</button>
 
-  <div class="keypad">
+        <button class="key" data-key="7">7</button>
+        <button class="key" data-key="8">8</button>
+        <button class="key" data-key="9">9</button>
 
-    <button class="key" onclick="pressKey('1')">1</button>
-    <button class="key" onclick="pressKey('2')">2</button>
-    <button class="key" onclick="pressKey('3')">3</button>
+        <button class="key special" id="clearPin">✕</button>
+        <button class="key" data-key="0">0</button>
+        <button class="key special" id="submitPin">✓</button>
 
-    <button class="key" onclick="pressKey('4')">4</button>
-    <button class="key" onclick="pressKey('5')">5</button>
-    <button class="key" onclick="pressKey('6')">6</button>
+    </div>
 
-    <button class="key" onclick="pressKey('7')">7</button>
-    <button class="key" onclick="pressKey('8')">8</button>
-    <button class="key" onclick="pressKey('9')">9</button>
-
-    <button class="key" onclick="clearPin()">✕</button>
-    <button class="key" onclick="pressKey('0')">0</button>
-    <button class="key" onclick="checkPin()">✓</button>
-
-  </div>
+    <p class="pin-hint">
+        Enter the secret 4-digit code
+    </p>
 
 </section>
 
@@ -125,66 +110,39 @@
      SCREEN 3 - BIRTHDAY
 ===================================================== -->
 
-<section class="screen" id="screen-3">
+<section class="screen" id="screen3">
 
-  <h1>
-    Happy Birthday,<br>
-    My Baby Maa 👑❤️
-  </h1>
+    <div class="small-label">TODAY IS ALL ABOUT YOU ✨</div>
 
-  <p class="subtext">
-    4–5 years of memories, laughter, fights, care,
-    craziness and one unforgettable bond.
-  </p>
+    <h1>
+        Happy Birthday,
+        <span class="pink">Chandana</span> 👑
+    </h1>
 
+    <p class="subtitle">
+        My Baby Maa, my favourite person 💖
+    </p>
 
-  <div class="stats-grid">
+    <div class="birthday-card">
 
-    <div class="stat-card">
-      <div class="stat-number">4+</div>
-      <div class="stat-label">YEARS TOGETHER</div>
+        <div class="age-number">
+            🎂
+        </div>
+
+        <h2>
+            Make a Wish
+        </h2>
+
+        <p>
+            Close your eyes, make your sweetest wish
+            and blow the candle.
+        </p>
+
+        <button class="primary-btn" id="blowButton">
+            Blow the Candle 🕯️
+        </button>
+
     </div>
-
-    <div class="stat-card">
-      <div class="stat-number">∞</div>
-      <div class="stat-label">MEMORIES</div>
-    </div>
-
-    <div class="stat-card">
-      <div class="stat-number">1</div>
-      <div class="stat-label">SPECIAL BOND</div>
-    </div>
-
-    <div class="stat-card">
-      <div class="stat-number">❤️</div>
-      <div class="stat-label">FOREVER</div>
-    </div>
-
-  </div>
-
-
-  <div class="cake-container" onclick="blowCandles()">
-
-    <div class="candle-flame" id="flame">
-      🔥
-    </div>
-
-    🎂
-
-  </div>
-
-  <p class="subtext" id="cake-prompt">
-    Tap the cake and make your birthday wish 🎂✨
-  </p>
-
-  <button
-    class="btn"
-    id="cake-next-btn"
-    style="display:none;"
-    onclick="goToScreen(4)"
-  >
-    Our Memories 📸
-  </button>
 
 </section>
 
@@ -193,57 +151,49 @@
      SCREEN 4 - MEMORIES
 ===================================================== -->
 
-<section class="screen" id="screen-4">
+<section class="screen" id="screen4">
 
-  <h1>Our Beautiful Memories 💖</h1>
+    <div class="small-label">OUR LITTLE WORLD 📸</div>
 
-  <p class="subtext">
-    Every picture has a story.
-  </p>
+    <h1>
+        Our Memories 💕
+    </h1>
 
+    <p class="subtitle">
+        4–5 years of beautiful madness together.
+    </p>
 
-  <div class="polaroid-card">
+    <div class="photo-card">
 
-    <img
-      id="polaroid-img"
-      class="polaroid-img"
-      src="photos/photo1.jpg"
-      alt="Chandana Memory"
-    >
+        <img id="memoryImage"
+             src="photo1.jpg"
+             alt="Our memory">
 
-    <div
-      class="polaroid-caption"
-      id="polaroid-caption"
-    >
-      The beginning of so many beautiful memories ❤️
+        <div class="photo-caption" id="memoryCaption">
+            One picture, a thousand memories. ❤️
+        </div>
+
     </div>
 
-  </div>
+    <div class="photo-controls">
 
+        <button class="round-btn" id="previousPhoto">
+            ‹
+        </button>
 
-  <div class="carousel-nav">
+        <span id="photoNumber">
+            1 / 4
+        </span>
 
-    <button class="nav-arrow" onclick="prevMemory()">
-      ‹
+        <button class="round-btn" id="nextPhoto">
+            ›
+        </button>
+
+    </div>
+
+    <button class="primary-btn" id="memoryNext">
+        Continue 💖
     </button>
-
-    <span id="memory-counter">
-      1 / 4
-    </span>
-
-    <button class="nav-arrow" onclick="nextMemory()">
-      ›
-    </button>
-
-  </div>
-
-
-  <button
-    class="btn"
-    onclick="goToScreen(5)"
-  >
-    Pop My Wishes 🎈
-  </button>
 
 </section>
 
@@ -252,87 +202,49 @@
      SCREEN 5 - BALLOONS
 ===================================================== -->
 
-<section class="screen" id="screen-5">
+<section class="screen" id="screen5">
 
-  <h1>Pop The Wishes 🎈</h1>
+    <div class="small-label">A FEW THINGS I WANT YOU TO KNOW 💌</div>
 
-  <p class="subtext">
-    Each balloon has something I want you to know.
-  </p>
+    <h1>
+        Pop My Wishes 🎈
+    </h1>
 
+    <p class="subtitle">
+        Tap every balloon.
+    </p>
 
-  <div class="balloons-row">
+    <div class="balloons">
 
-    <div
-      class="balloon"
-      onclick="popBalloon(
-        this,
-        'You have always been more than just a friend to me. You became my home, my comfort and my favourite person. ❤️'
-      )"
-    >
-      🎈
+        <button class="balloon" data-wish="You are not just my friend. You became a part of my life that I can never replace. ❤️">
+            🎈
+        </button>
+
+        <button class="balloon" data-wish="You have been my friend, my mother, my teacher and sometimes my biggest headache. 😂❤️">
+            🎈
+        </button>
+
+        <button class="balloon" data-wish="Thank you for staying beside your Pucchu through all the beautiful and difficult moments. 🥹">
+            🎈
+        </button>
+
+        <button class="balloon" data-wish="No matter how many years pass, I hope our bond always stays this special. ♾️💖">
+            🎈
+        </button>
+
     </div>
 
-
-    <div
-      class="balloon"
-      onclick="popBalloon(
-        this,
-        'You have been my friend when I needed a friend, my mother when I needed care, and my teacher when I needed guidance. 🥹❤️'
-      )"
-    >
-      🎈
+    <div class="wish-box" id="wishBox">
+        Tap a balloon to reveal a message ✨
     </div>
 
+    <p class="counter" id="balloonCounter">
+        0 / 4 opened
+    </p>
 
-    <div
-      class="balloon"
-      onclick="popBalloon(
-        this,
-        'From our silly moments to our serious conversations, these 4–5 years gave me memories I will always carry in my heart. ✨'
-      )"
-    >
-      🎈
-    </div>
-
-
-    <div
-      class="balloon"
-      onclick="popBalloon(
-        this,
-        'No matter how much life changes, I hope a small part of that cute couple we once were always stays alive in our hearts. ❤️'
-      )"
-    >
-      🎈
-    </div>
-
-  </div>
-
-
-  <div
-    class="revealed-wish"
-    id="wish-display"
-  >
-    Tap a balloon above ✨
-  </div>
-
-
-  <p
-    class="subtext"
-    id="balloon-count"
-  >
-    POPPED 0/4
-  </p>
-
-
-  <button
-    class="btn"
-    id="balloon-next-btn"
-    style="display:none;"
-    onclick="goToScreen(6)"
-  >
-    Solve Our Puzzle 🧩
-  </button>
+    <button class="primary-btn hidden" id="balloonNext">
+        One More Surprise 🧩
+    </button>
 
 </section>
 
@@ -341,37 +253,27 @@
      SCREEN 6 - PUZZLE
 ===================================================== -->
 
-<section class="screen" id="screen-6">
+<section class="screen" id="screen6">
 
-  <h1>Our Little Puzzle 🧩</h1>
+    <div class="small-label">OUR PICTURE 🧩</div>
 
-  <p class="subtext">
-    Put the memories back together.
-  </p>
+    <h1>
+        A Little Puzzle
+    </h1>
 
+    <p class="subtitle">
+        Put our picture back together.
+    </p>
 
-  <div
-    class="puzzle-grid"
-    id="puzzle-grid"
-  ></div>
+    <div class="puzzle" id="puzzle"></div>
 
+    <p class="puzzle-message" id="puzzleMessage">
+        Tap two pieces to swap them.
+    </p>
 
-  <p
-    id="puzzle-message"
-    class="subtext"
-  >
-    Tap two pieces to swap them.
-  </p>
-
-
-  <button
-    class="btn"
-    id="puzzle-next-btn"
-    style="display:none;"
-    onclick="goToScreen(7)"
-  >
-    One Last Surprise ✨
-  </button>
+    <button class="primary-btn hidden" id="puzzleNext">
+        Scratch Your Surprise ✨
+    </button>
 
 </section>
 
@@ -380,53 +282,45 @@
      SCREEN 7 - SCRATCH CARD
 ===================================================== -->
 
-<section class="screen" id="screen-7">
+<section class="screen" id="screen7">
 
-  <h1>One Last Surprise ✨</h1>
+    <div class="small-label">JUST FOR YOU 💖</div>
 
-  <p class="subtext">
-    Scratch the card and see what's waiting for you.
-  </p>
+    <h1>
+        One Last Secret
+    </h1>
 
+    <p class="subtitle">
+        Scratch the golden surface.
+    </p>
 
-  <div class="scratch-wrapper">
+    <div class="scratch-card">
 
-    <div class="scratch-reveal-content">
+        <div class="scratch-content">
 
-      <img
-        class="scratch-reveal-img"
-        src="photos/photo2.jpg"
-        alt="Chandana"
-      >
+            <img src="photo4.jpg"
+                 alt="Baby Maa">
 
-      <h3>
-        Happy Birthday, Baby Maa! ❤️
-      </h3>
+            <h2>
+                Happy Birthday Baby Maa! 💖
+            </h2>
 
-      <p>
-        You found the secret surprise 💖
-      </p>
+            <p>
+                You found the secret message.
+            </p>
+
+        </div>
+
+        <canvas id="scratchCanvas"
+                width="280"
+                height="280">
+        </canvas>
 
     </div>
 
-
-    <canvas
-      id="scratch-canvas"
-      width="260"
-      height="260"
-    ></canvas>
-
-  </div>
-
-
-  <button
-    class="btn"
-    id="scratch-next-btn"
-    style="display:none;"
-    onclick="goToScreen(8)"
-  >
-    Read My Letter 💌
-  </button>
+    <button class="primary-btn hidden" id="letterNext">
+        Read My Letter 💌
+    </button>
 
 </section>
 
@@ -435,167 +329,116 @@
      SCREEN 8 - LETTER
 ===================================================== -->
 
-<section class="screen" id="screen-8">
+<section class="screen letter-screen" id="screen8">
 
-  <div class="letter-card">
+    <div class="letter">
 
-    <div class="letter-title">
-      To My Baby Maa, Chandana 💌
+        <div class="letter-decoration">
+            💌
+        </div>
+
+        <h1>
+            To My Baby Maa
+        </h1>
+
+        <p>
+            Happy Birthday, Chandana. ❤️
+        </p>
+
+        <p>
+            I don't really know where to begin because
+            there are some people in life who simply cannot
+            be explained in a few words.
+        </p>
+
+        <p>
+            And you are one of those people for me.
+        </p>
+
+        <p>
+            It's been around 4–5 years since you became
+            such an important part of my life. We started
+            as two people who became close, and somewhere
+            along the way, you became so much more.
+        </p>
+
+        <p>
+            You became my friend when I needed someone
+            to talk to.
+        </p>
+
+        <p>
+            You became my mother when I needed someone
+            to care for me, scold me and keep me on the
+            right path.
+        </p>
+
+        <p>
+            You became my teacher when I needed someone
+            to teach me things that life itself couldn't.
+        </p>
+
+        <p>
+            And somehow, you also became my cute,
+            crazy, beautiful person with whom I shared
+            some of the most unforgettable moments.
+        </p>
+
+        <p>
+            You call me <strong>Pucchu</strong>.
+            And honestly, that little name means more
+            to me than you probably realize.
+        </p>
+
+        <p>
+            We have laughed, fought, irritated each other,
+            cared for each other, understood each other
+            and created memories that I will always keep
+            close to my heart.
+        </p>
+
+        <p>
+            If I ever made you feel that you were not
+            important to me, I'm sorry.
+            Because the truth is, you are incredibly
+            special to me.
+        </p>
+
+        <p>
+            I hope life gives you every happiness you
+            deserve. I hope you achieve everything you
+            dream about. And I hope you never lose that
+            beautiful person inside you.
+        </p>
+
+        <p>
+            Years may change us.
+            Life may take us in different directions.
+            But I genuinely hope that somewhere in all
+            those years, there will always be a little
+            place for your Pucchu in your heart.
+        </p>
+
+        <p>
+            Thank you for being my friend.
+            Thank you for being my mother.
+            Thank you for being my teacher.
+            Thank you for being <strong>you</strong>.
+        </p>
+
+        <p class="final-message">
+            Happy Birthday, Baby Maa. 🥹❤️
+            <br><br>
+            With lots of love,
+            <br>
+            <strong>Your Pucchu 🫶</strong>
+        </p>
+
     </div>
 
-
-    <p>
-
-      Happy Birthday, Baby Maa. ❤️
-
-      <br><br>
-
-      I honestly don't know where to begin,
-      because 4–5 years is not something that can be
-      explained in a few paragraphs.
-
-      <br><br>
-
-      We started as two people who found each other,
-      became friends, became a cute couple,
-      and somewhere along the way you became so much more
-      than just one person in my life.
-
-      <br><br>
-
-      You have been my friend when I needed someone
-      to laugh with.
-
-      You have been like my mother when I needed care.
-
-      You have been my teacher when I needed someone
-      to show me the right way.
-
-      You have been my guide when I felt lost.
-
-      And sometimes, you have simply been the person
-      I needed without even knowing that I needed you.
-
-      <br><br>
-
-      We have laughed over the stupidest things,
-      fought over the smallest things,
-      annoyed each other,
-      understood each other,
-      and created memories that I know I will never
-      be able to replace.
-
-      <br><br>
-
-      There were good days.
-
-      There were difficult days.
-
-      There were days when we probably didn't even
-      understand each other properly.
-
-      <br><br>
-
-      But somehow, after all these years,
-      when I look back at everything,
-      I don't remember the fights first.
-
-      <br>
-
-      I remember <strong>you.</strong>
-
-      <br><br>
-
-      The girl who made me laugh.
-
-      The girl who cared for me.
-
-      The girl who corrected me.
-
-      The girl who taught me things.
-
-      The girl who treated me like a child sometimes. 😂❤️
-
-      <br><br>
-
-      And that's why I call you
-      <strong>Baby Maa.</strong>
-
-      <br><br>
-
-      Because you have been a little bit of everything to me.
-
-      <br><br>
-
-      I don't know what the future will look like.
-
-      I don't know where life will take either of us.
-
-      But I do know one thing...
-
-      <br><br>
-
-      <strong>
-        You will always be one of the most beautiful
-        chapters of my life.
-      </strong>
-
-      <br><br>
-
-      Thank you for every laugh.
-
-      Thank you for every lesson.
-
-      Thank you for every fight.
-
-      Thank you for every moment you stayed.
-
-      Thank you for being there in ways you probably
-      don't even realise.
-
-      <br><br>
-
-      And if this little website makes you smile,
-      or maybe even brings a tiny happy tear to your eyes...
-
-      <br><br>
-
-      Then I know I did what I wanted to do.
-
-      <br><br>
-
-      <strong>
-        Happy Birthday, my Baby Maa. 🎂❤️
-      </strong>
-
-      <br><br>
-
-      No matter what happens,
-      never forget that there is someone out there
-      who will always be grateful that
-      <strong>Chandana existed in his story.</strong>
-
-      <br><br>
-
-      With all the love, memories and gratitude,
-
-      <br><br>
-
-      <strong>
-        Your PUCCHU ❤️
-      </strong>
-
-    </p>
-
-  </div>
-
-
-  <button
-    class="btn"
-    onclick="goToScreen(1)"
-  >
-    Watch It Again ↺
-  </button>
+    <button class="primary-btn" id="restartButton">
+        Watch Again ↺
+    </button>
 
 </section>
 
@@ -607,422 +450,177 @@
 <script>
 
 /* =====================================================
-   MUSIC & NAVIGATION
+   SCREEN NAVIGATION
 ===================================================== */
 
-const audio = document.getElementById("bg-audio");
+const screens = document.querySelectorAll(".screen");
+
+function showScreen(number) {
+
+    screens.forEach(screen => {
+        screen.classList.remove("active");
+    });
+
+    const target = document.getElementById("screen" + number);
+
+    if (target) {
+        target.classList.add("active");
+    }
+
+    window.scrollTo(0, 0);
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+const music = document.getElementById("bgMusic");
 
 function startMusic() {
 
-  if (audio.paused) {
-
-    audio.play().catch(() => {});
-
-  }
-
-}
-
-
-function goToScreen(screenNum) {
-
-  startMusic();
-
-  document
-    .querySelectorAll(".screen")
-    .forEach(screen => {
-
-      screen.classList.remove("active");
-
-    });
-
-
-  const target =
-    document.getElementById(`screen-${screenNum}`);
-
-
-  if (target) {
-
-    target.classList.add("active");
-
-  }
-
-
-  if (screenNum === 3) {
-
-    openCurtains();
-
-  }
-
-
-  if (screenNum === 6) {
-
-    initPuzzle();
-
-  }
-
-
-  if (screenNum === 7) {
-
-    initScratchCard();
-
-  }
-
-}
-
-
-/* =====================================================
-   FLOATING HEARTS
-===================================================== */
-
-const hCanvas =
-  document.getElementById("hearts-canvas");
-
-const hCtx =
-  hCanvas.getContext("2d");
-
-let hearts = [];
-
-
-function resizeCanvas() {
-
-  hCanvas.width =
-    window.innerWidth;
-
-  hCanvas.height =
-    window.innerHeight;
-
-}
-
-
-window.addEventListener(
-  "resize",
-  resizeCanvas
-);
-
-resizeCanvas();
-
-
-class Heart {
-
-  constructor() {
-
-    this.reset();
-
-  }
-
-
-  reset() {
-
-    this.x =
-      Math.random() * hCanvas.width;
-
-    this.y =
-      hCanvas.height +
-      Math.random() * 20;
-
-    this.size =
-      Math.random() * 12 + 8;
-
-    this.speedY =
-      Math.random() * 1.5 + 0.5;
-
-    this.speedX =
-      (Math.random() - 0.5) * 0.8;
-
-    this.opacity =
-      Math.random() * 0.5 + 0.3;
-
-  }
-
-
-  update() {
-
-    this.y -= this.speedY;
-
-    this.x += this.speedX;
-
-
-    if (this.y < -20) {
-
-      this.reset();
-
+    if (music.paused) {
+        music.play().catch(function() {
+            console.log("Music will start after another tap.");
+        });
     }
 
-  }
-
-
-  draw() {
-
-    hCtx.save();
-
-    hCtx.fillStyle =
-      `rgba(255,105,180,${this.opacity})`;
-
-    hCtx.beginPath();
-
-    const topCurveHeight =
-      this.size * 0.3;
-
-
-    hCtx.moveTo(
-      this.x,
-      this.y + topCurveHeight
-    );
-
-
-    hCtx.bezierCurveTo(
-      this.x,
-      this.y,
-      this.x - this.size / 2,
-      this.y,
-      this.x - this.size / 2,
-      this.y + topCurveHeight
-    );
-
-
-    hCtx.bezierCurveTo(
-      this.x - this.size / 2,
-      this.y + (this.size + topCurveHeight) / 2,
-      this.x,
-      this.y + this.size,
-      this.x,
-      this.y + this.size
-    );
-
-
-    hCtx.bezierCurveTo(
-      this.x,
-      this.y + this.size,
-      this.x + this.size / 2,
-      this.y + (this.size + topCurveHeight) / 2,
-      this.x + this.size / 2,
-      this.y + topCurveHeight
-    );
-
-
-    hCtx.bezierCurveTo(
-      this.x + this.size / 2,
-      this.y,
-      this.x,
-      this.y,
-      this.x,
-      this.y + topCurveHeight
-    );
-
-
-    hCtx.closePath();
-
-    hCtx.fill();
-
-    hCtx.restore();
-
-  }
-
 }
-
-
-for (let i = 0; i < 25; i++) {
-
-  hearts.push(new Heart());
-
-}
-
-
-function animateHearts() {
-
-  hCtx.clearRect(
-    0,
-    0,
-    hCanvas.width,
-    hCanvas.height
-  );
-
-
-  hearts.forEach(heart => {
-
-    heart.update();
-    heart.draw();
-
-  });
-
-
-  requestAnimationFrame(
-    animateHearts
-  );
-
-}
-
-
-animateHearts();
 
 
 /* =====================================================
-   PIN SYSTEM
+   GIFT
 ===================================================== */
 
-const CORRECT_PIN = "2329";
+document.getElementById("giftButton").addEventListener("click", function() {
+
+    startMusic();
+
+    createConfetti();
+
+    showScreen(2);
+
+});
+
+
+/* =====================================================
+   PIN
+===================================================== */
+
+const correctPin = "1234";
 
 let enteredPin = "";
 
+const keys = document.querySelectorAll(".key[data-key]");
 
-function updateLiveClock() {
+keys.forEach(function(key) {
 
-  const now = new Date();
+    key.addEventListener("click", function() {
 
-  document.getElementById(
-    "live-clock"
-  ).innerText =
+        startMusic();
 
-    String(now.getHours())
-      .padStart(2, "0")
+        if (enteredPin.length >= 4) {
+            return;
+        }
 
-    + ":" +
+        enteredPin += key.dataset.key;
 
-    String(now.getMinutes())
-      .padStart(2, "0");
+        updatePinDots();
 
-}
+        if (enteredPin.length === 4) {
 
+            setTimeout(function() {
 
-setInterval(
-  updateLiveClock,
-  1000
-);
+                if (enteredPin === correctPin) {
 
-updateLiveClock();
+                    createConfetti();
 
+                    showScreen(3);
 
-function pressKey(num) {
+                } else {
 
-  if (enteredPin.length < 4) {
+                    alert("Wrong PIN 💕 Try 1234");
 
-    enteredPin += num;
+                    enteredPin = "";
 
-    updateDots();
+                    updatePinDots();
 
+                }
 
-    if (enteredPin.length === 4) {
+            }, 250);
 
-      setTimeout(
-        checkPin,
-        150
-      );
+        }
 
-    }
+    });
 
-  }
-
-}
+});
 
 
-function clearPin() {
-
-  enteredPin = "";
-
-  updateDots();
-
-}
-
-
-function updateDots() {
-
-  for (let i = 0; i < 4; i++) {
-
-    document
-      .getElementById(`dot-${i}`)
-      .classList
-      .toggle(
-        "filled",
-        i < enteredPin.length
-      );
-
-  }
-
-}
-
-
-function checkPin() {
-
-  if (enteredPin === CORRECT_PIN) {
+document.getElementById("clearPin").addEventListener("click", function() {
 
     enteredPin = "";
 
-    updateDots();
+    updatePinDots();
 
-    goToScreen(3);
+});
 
-  }
 
-  else {
+document.getElementById("submitPin").addEventListener("click", function() {
 
-    alert(
-      "Not quite, Baby Maa 😜 Try again ❤️"
-    );
+    if (enteredPin === correctPin) {
 
-    clearPin();
+        createConfetti();
 
-  }
+        showScreen(3);
+
+    } else {
+
+        alert("Wrong PIN 💕 Try 1234");
+
+        enteredPin = "";
+
+        updatePinDots();
+
+    }
+
+});
+
+
+function updatePinDots() {
+
+    for (let i = 0; i < 4; i++) {
+
+        const dot = document.getElementById("dot" + i);
+
+        dot.classList.toggle(
+            "filled",
+            i < enteredPin.length
+        );
+
+    }
 
 }
 
 
 /* =====================================================
-   CURTAINS & CAKE
+   BLOW CANDLE
 ===================================================== */
 
-function openCurtains() {
+document.getElementById("blowButton").addEventListener("click", function() {
 
-  const curtains =
-    document.getElementById(
-      "curtain-container"
-    );
+    createConfetti();
 
-  curtains.classList.add(
-    "curtain-open"
-  );
+    this.innerHTML = "Wish Made! ✨";
 
-}
+    this.disabled = true;
 
+    setTimeout(function() {
 
-function blowCandles() {
+        showScreen(4);
 
-  const flame =
-    document.getElementById("flame");
+    }, 1500);
 
-
-  if (flame) {
-
-    flame.style.display =
-      "none";
-
-  }
-
-
-  document.getElementById(
-    "cake-prompt"
-  ).innerText =
-    "Happy Birthday, Baby Maa! Make a beautiful wish ✨❤️";
-
-
-  confetti({
-
-    particleCount: 150,
-
-    spread: 80,
-
-    origin: {
-      y: 0.6
-    }
-
-  });
-
-
-  document.getElementById(
-    "cake-next-btn"
-  ).style.display =
-    "inline-block";
-
-}
+});
 
 
 /* =====================================================
@@ -1031,561 +629,761 @@ function blowCandles() {
 
 const memories = [
 
-  {
-    img: "photos/photo1.jpg",
-    caption:
-      "The beginning of so many beautiful memories ❤️"
-  },
+    {
+        image: "photo1.jpg",
+        caption: "One picture, a thousand memories. ❤️"
+    },
 
-  {
-    img: "photos/photo2.jpg",
-    caption:
-      "Our crazy little moments that I'll never forget 😂❤️"
-  },
+    {
+        image: "photo2.jpg",
+        caption: "Some moments become memories forever. 🥹"
+    },
 
-  {
-    img: "photos/photo3.jpg",
-    caption:
-      "Somehow, you always managed to make me smile. 🥹"
-  },
+    {
+        image: "photo3.jpg",
+        caption: "Our little world, our little madness. 😂💕"
+    },
 
-  {
-    img: "photos/photo4.jpg",
-    caption:
-      "4–5 years later... and this bond still means everything. ❤️"
-  }
+    {
+        image: "photo4.jpg",
+        caption: "And somehow, you became my favourite person. ❤️"
+    }
 
 ];
 
+let currentMemory = 0;
 
-let memIdx = 0;
+const memoryImage =
+    document.getElementById("memoryImage");
+
+const memoryCaption =
+    document.getElementById("memoryCaption");
+
+const photoNumber =
+    document.getElementById("photoNumber");
 
 
 function renderMemory() {
 
-  document.getElementById(
-    "polaroid-img"
-  ).src =
-    memories[memIdx].img;
+    const memory = memories[currentMemory];
 
+    memoryImage.src = memory.image;
 
-  document.getElementById(
-    "polaroid-caption"
-  ).innerText =
-    memories[memIdx].caption;
+    memoryCaption.textContent = memory.caption;
 
-
-  document.getElementById(
-    "memory-counter"
-  ).innerText =
-    `${memIdx + 1} / ${memories.length}`;
+    photoNumber.textContent =
+        (currentMemory + 1) + " / " + memories.length;
 
 }
 
 
-function nextMemory() {
+document.getElementById("nextPhoto")
+.addEventListener("click", function() {
 
-  memIdx =
-    (memIdx + 1) %
-    memories.length;
+    currentMemory++;
 
-  renderMemory();
+    if (currentMemory >= memories.length) {
+        currentMemory = 0;
+    }
 
-}
+    renderMemory();
+
+});
 
 
-function prevMemory() {
+document.getElementById("previousPhoto")
+.addEventListener("click", function() {
 
-  memIdx =
-    (memIdx - 1 + memories.length) %
-    memories.length;
+    currentMemory--;
 
-  renderMemory();
+    if (currentMemory < 0) {
+        currentMemory = memories.length - 1;
+    }
 
-}
+    renderMemory();
+
+});
+
+
+document.getElementById("memoryNext")
+.addEventListener("click", function() {
+
+    showScreen(5);
+
+});
 
 
 /* =====================================================
    BALLOONS
 ===================================================== */
 
-let poppedCount = 0;
+const balloons =
+    document.querySelectorAll(".balloon");
+
+let balloonsOpened = 0;
+
+balloons.forEach(function(balloon) {
+
+    balloon.addEventListener("click", function() {
+
+        if (balloon.classList.contains("opened")) {
+            return;
+        }
+
+        balloon.classList.add("opened");
+
+        balloon.textContent = "💥";
+
+        document.getElementById("wishBox")
+        .textContent = balloon.dataset.wish;
+
+        balloonsOpened++;
+
+        document.getElementById("balloonCounter")
+        .textContent =
+            balloonsOpened + " / 4 opened";
+
+        createConfetti();
+
+        if (balloonsOpened === 4) {
+
+            document.getElementById("balloonNext")
+            .classList.remove("hidden");
+
+        }
+
+    });
+
+});
 
 
-function popBalloon(
-  element,
-  wishText
-) {
+document.getElementById("balloonNext")
+.addEventListener("click", function() {
 
-  if (
-    element.dataset.popped === "true"
-  ) {
+    showScreen(6);
 
-    return;
+    initPuzzle();
 
-  }
-
-
-  element.dataset.popped =
-    "true";
-
-  element.innerText =
-    "💥";
-
-
-  document.getElementById(
-    "wish-display"
-  ).innerText =
-    wishText;
-
-
-  confetti({
-
-    particleCount: 40,
-
-    spread: 60,
-
-    origin: {
-      y: 0.7
-    }
-
-  });
-
-
-  poppedCount++;
-
-
-  document.getElementById(
-    "balloon-count"
-  ).innerText =
-    `POPPED ${poppedCount}/4`;
-
-
-  if (poppedCount >= 4) {
-
-    document.getElementById(
-      "balloon-next-btn"
-    ).style.display =
-      "inline-block";
-
-  }
-
-}
+});
 
 
 /* =====================================================
-   PHOTO PUZZLE
+   PUZZLE
 ===================================================== */
 
-const puzzleImg =
-  "photos/photo1.jpg";
+const puzzle = document.getElementById("puzzle");
 
+let puzzleTiles = [];
 
-let tiles =
-  [0,1,2,3,4,5,6,7,8];
+let selectedPuzzleTile = null;
 
+function initPuzzle() {
 
-let selectedTile =
-  null;
+    puzzleTiles = [
+        0, 1, 2,
+        3, 4, 5,
+        6, 7, 8
+    ];
 
+    do {
 
-let puzzleInitialized =
-  false;
+        shuffleArray(puzzleTiles);
 
+    } while (isSolved());
 
-function shuffleTiles() {
+    selectedPuzzleTile = null;
 
-  do {
-
-    tiles =
-      [0,1,2,3,4,5,6,7,8]
-        .sort(
-          () => Math.random() - 0.5
-        );
-
-  }
-
-  while (
-    tiles.every(
-      (value, index) =>
-        value === index
-    )
-  );
+    renderPuzzle();
 
 }
 
 
-function initPuzzle() {
+function shuffleArray(array) {
 
-  if (!puzzleInitialized) {
+    for (let i = array.length - 1; i > 0; i--) {
 
-    shuffleTiles();
+        const j =
+            Math.floor(Math.random() * (i + 1));
 
-    puzzleInitialized = true;
+        [array[i], array[j]] =
+            [array[j], array[i]];
 
-  }
-
-
-  selectedTile = null;
-
-  renderPuzzle();
+    }
 
 }
 
 
 function renderPuzzle() {
 
-  const grid =
-    document.getElementById(
-      "puzzle-grid"
-    );
+    puzzle.innerHTML = "";
 
+    puzzleTiles.forEach(function(tile, index) {
 
-  grid.innerHTML = "";
+        const piece =
+            document.createElement("button");
 
+        piece.className = "puzzle-piece";
 
-  tiles.forEach(
-    (position, index) => {
+        if (selectedPuzzleTile === index) {
+            piece.classList.add("selected");
+        }
 
-      const tile =
-        document.createElement(
-          "div"
-        );
+        piece.style.backgroundImage =
+            "url('photo1.jpg')";
 
+        const row = Math.floor(tile / 3);
 
-      tile.className =
-        "puzzle-tile";
+        const column = tile % 3;
 
+        piece.style.backgroundPosition =
+            "-" + (column * 100) + "% -" +
+            (row * 100) + "%";
 
-      if (
-        selectedTile === index
-      ) {
+        piece.addEventListener("click", function() {
 
-        tile.classList.add(
-          "selected"
-        );
+            puzzleClick(index);
 
-      }
+        });
 
-
-      tile.style.backgroundImage =
-        `url("${puzzleImg}")`;
-
-
-      const row =
-        Math.floor(position / 3);
-
-
-      const col =
-        position % 3;
-
-
-      tile.style.backgroundPosition =
-        `-${col * 80}px -${row * 80}px`;
-
-
-      tile.onclick =
-        () => onTileClick(index);
-
-
-      grid.appendChild(tile);
-
-    }
-  );
-
-}
-
-
-function onTileClick(index) {
-
-  if (
-    selectedTile === null
-  ) {
-
-    selectedTile =
-      index;
-
-  }
-
-  else {
-
-    const temp =
-      tiles[selectedTile];
-
-
-    tiles[selectedTile] =
-      tiles[index];
-
-
-    tiles[index] =
-      temp;
-
-
-    selectedTile =
-      null;
-
-
-    checkPuzzleWin();
-
-  }
-
-
-  renderPuzzle();
-
-}
-
-
-function checkPuzzleWin() {
-
-  const isWon =
-    tiles.every(
-      (value, index) =>
-        value === index
-    );
-
-
-  if (isWon) {
-
-    document.getElementById(
-      "puzzle-message"
-    ).innerText =
-      "You did it! Just like we always figured things out together. ❤️";
-
-
-    document.getElementById(
-      "puzzle-next-btn"
-    ).style.display =
-      "inline-block";
-
-
-    confetti({
-
-      particleCount: 180,
-
-      spread: 90,
-
-      origin: {
-        y: 0.6
-      }
+        puzzle.appendChild(piece);
 
     });
 
-  }
+}
+
+
+function puzzleClick(index) {
+
+    if (selectedPuzzleTile === null) {
+
+        selectedPuzzleTile = index;
+
+        renderPuzzle();
+
+        return;
+
+    }
+
+    const temp =
+        puzzleTiles[selectedPuzzleTile];
+
+    puzzleTiles[selectedPuzzleTile] =
+        puzzleTiles[index];
+
+    puzzleTiles[index] = temp;
+
+    selectedPuzzleTile = null;
+
+    renderPuzzle();
+
+    if (isSolved()) {
+
+        document.getElementById("puzzleMessage")
+        .textContent =
+            "You did it! That's our picture! 🥹❤️";
+
+        createConfetti();
+
+        document.getElementById("puzzleNext")
+        .classList.remove("hidden");
+
+    }
 
 }
+
+
+function isSolved() {
+
+    return puzzleTiles.every(function(tile, index) {
+
+        return tile === index;
+
+    });
+
+}
+
+
+document.getElementById("puzzleNext")
+.addEventListener("click", function() {
+
+    showScreen(7);
+
+    initScratchCard();
+
+});
 
 
 /* =====================================================
    SCRATCH CARD
 ===================================================== */
 
-let scratchInitialized =
-  false;
-
+let scratchInitialized = false;
 
 function initScratchCard() {
 
-  if (scratchInitialized) {
+    if (scratchInitialized) {
+        return;
+    }
 
-    return;
+    scratchInitialized = true;
 
-  }
+    const canvas =
+        document.getElementById("scratchCanvas");
+
+    const ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "#c59b45";
+
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    ctx.fillStyle = "#ffffff";
+
+    ctx.font =
+        "bold 20px Poppins";
+
+    ctx.textAlign = "center";
+
+    ctx.fillText(
+        "✨ SCRATCH HERE ✨",
+        140,
+        140
+    );
+
+    let scratching = false;
+
+    let scratchedPixels = 0;
 
 
-  scratchInitialized = true;
+    function getPosition(event) {
+
+        const rect =
+            canvas.getBoundingClientRect();
+
+        let clientX;
+        let clientY;
+
+        if (event.touches &&
+            event.touches.length > 0) {
+
+            clientX =
+                event.touches[0].clientX;
+
+            clientY =
+                event.touches[0].clientY;
+
+        } else {
+
+            clientX =
+                event.clientX;
+
+            clientY =
+                event.clientY;
+
+        }
+
+        return {
+
+            x:
+                (clientX - rect.left) *
+                (canvas.width / rect.width),
+
+            y:
+                (clientY - rect.top) *
+                (canvas.height / rect.height)
+
+        };
+
+    }
 
 
-  const canvas =
-    document.getElementById(
-      "scratch-canvas"
+    function scratch(event) {
+
+        if (!scratching) {
+            return;
+        }
+
+        event.preventDefault();
+
+        const position =
+            getPosition(event);
+
+        ctx.globalCompositeOperation =
+            "destination-out";
+
+        ctx.beginPath();
+
+        ctx.arc(
+            position.x,
+            position.y,
+            25,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+
+        scratchedPixels++;
+
+        if (scratchedPixels > 35) {
+
+            document.getElementById("letterNext")
+            .classList.remove("hidden");
+
+        }
+
+    }
+
+
+    canvas.addEventListener(
+        "mousedown",
+        function() {
+            scratching = true;
+        }
+    );
+
+    canvas.addEventListener(
+        "mouseup",
+        function() {
+            scratching = false;
+        }
+    );
+
+    canvas.addEventListener(
+        "mouseleave",
+        function() {
+            scratching = false;
+        }
+    );
+
+    canvas.addEventListener(
+        "mousemove",
+        scratch
     );
 
 
-  const ctx =
-    canvas.getContext("2d");
+    canvas.addEventListener(
+        "touchstart",
+        function(event) {
+
+            scratching = true;
+
+            event.preventDefault();
+
+        },
+        { passive: false }
+    );
 
 
-  ctx.fillStyle =
-    "#c5a059";
+    canvas.addEventListener(
+        "touchend",
+        function() {
+
+            scratching = false;
+
+        }
+    );
 
 
-  ctx.fillRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
-  );
+    canvas.addEventListener(
+        "touchmove",
+        scratch,
+        { passive: false }
+    );
+
+}
 
 
-  ctx.font =
-    "bold 16px Poppins";
+document.getElementById("letterNext")
+.addEventListener("click", function() {
+
+    showScreen(8);
+
+    createConfetti();
+
+});
 
 
-  ctx.fillStyle =
-    "#ffffff";
+/* =====================================================
+   RESTART
+===================================================== */
+
+document.getElementById("restartButton")
+.addEventListener("click", function() {
+
+    location.reload();
+
+});
 
 
-  ctx.textAlign =
-    "center";
+/* =====================================================
+   HEART ANIMATION
+===================================================== */
+
+const heartsCanvas =
+    document.getElementById("heartsCanvas");
+
+const heartsCtx =
+    heartsCanvas.getContext("2d");
+
+let hearts = [];
+
+function resizeHeartsCanvas() {
+
+    heartsCanvas.width =
+        window.innerWidth;
+
+    heartsCanvas.height =
+        window.innerHeight;
+
+}
+
+window.addEventListener(
+    "resize",
+    resizeHeartsCanvas
+);
+
+resizeHeartsCanvas();
 
 
-  ctx.fillText(
-    "✨ Scratch Here ✨",
-    130,
-    135
-  );
-
-
-  let isDrawing =
-    false;
-
-
-  function getPosition(event) {
-
-    const rect =
-      canvas.getBoundingClientRect();
-
-
-    let clientX;
-    let clientY;
-
-
-    if (
-      event.touches &&
-      event.touches.length
-    ) {
-
-      clientX =
-        event.touches[0].clientX;
-
-      clientY =
-        event.touches[0].clientY;
-
-    }
-
-    else {
-
-      clientX =
-        event.clientX;
-
-      clientY =
-        event.clientY;
-
-    }
-
+function createHeart() {
 
     return {
 
-      x:
-        (clientX - rect.left) *
-        (canvas.width / rect.width),
+        x:
+            Math.random() *
+            heartsCanvas.width,
 
-      y:
-        (clientY - rect.top) *
-        (canvas.height / rect.height)
+        y:
+            heartsCanvas.height +
+            Math.random() * 100,
+
+        size:
+            Math.random() * 14 + 7,
+
+        speed:
+            Math.random() * 1.2 + 0.4,
+
+        opacity:
+            Math.random() * 0.4 + 0.15
 
     };
 
-  }
+}
 
 
-  function scratch(event) {
+for (let i = 0; i < 30; i++) {
 
-    if (!isDrawing) {
-
-      return;
-
-    }
-
-
-    event.preventDefault();
-
-
-    const position =
-      getPosition(event);
-
-
-    ctx.globalCompositeOperation =
-      "destination-out";
-
-
-    ctx.beginPath();
-
-
-    ctx.arc(
-      position.x,
-      position.y,
-      22,
-      0,
-      Math.PI * 2
-    );
-
-
-    ctx.fill();
-
-
-    document.getElementById(
-      "scratch-next-btn"
-    ).style.display =
-      "inline-block";
-
-  }
-
-
-  canvas.addEventListener(
-    "mousedown",
-    () => {
-      isDrawing = true;
-    }
-  );
-
-
-  canvas.addEventListener(
-    "mouseup",
-    () => {
-      isDrawing = false;
-    }
-  );
-
-
-  canvas.addEventListener(
-    "mouseleave",
-    () => {
-      isDrawing = false;
-    }
-  );
-
-
-  canvas.addEventListener(
-    "mousemove",
-    scratch
-  );
-
-
-  canvas.addEventListener(
-    "touchstart",
-    () => {
-      isDrawing = true;
-    },
-    { passive: false }
-  );
-
-
-  canvas.addEventListener(
-    "touchend",
-    () => {
-      isDrawing = false;
-    }
-  );
-
-
-  canvas.addEventListener(
-    "touchmove",
-    scratch,
-    { passive: false }
-  );
+    hearts.push(createHeart());
 
 }
+
+
+function drawHeart(x, y, size, opacity) {
+
+    heartsCtx.save();
+
+    heartsCtx.globalAlpha = opacity;
+
+    heartsCtx.fillStyle = "#ff4f91";
+
+    heartsCtx.beginPath();
+
+    heartsCtx.moveTo(
+        x,
+        y + size / 4
+    );
+
+    heartsCtx.bezierCurveTo(
+        x - size,
+        y - size / 2,
+        x - size,
+        y + size / 2,
+        x,
+        y + size
+    );
+
+    heartsCtx.bezierCurveTo(
+        x + size,
+        y + size / 2,
+        x + size,
+        y - size / 2,
+        x,
+        y + size / 4
+    );
+
+    heartsCtx.fill();
+
+    heartsCtx.restore();
+
+}
+
+
+function animateHearts() {
+
+    heartsCtx.clearRect(
+        0,
+        0,
+        heartsCanvas.width,
+        heartsCanvas.height
+    );
+
+    hearts.forEach(function(heart) {
+
+        heart.y -= heart.speed;
+
+        if (heart.y < -30) {
+
+            Object.assign(
+                heart,
+                createHeart()
+            );
+
+        }
+
+        drawHeart(
+            heart.x,
+            heart.y,
+            heart.size,
+            heart.opacity
+        );
+
+    });
+
+    requestAnimationFrame(animateHearts);
+
+}
+
+animateHearts();
+
+
+/* =====================================================
+   SIMPLE CONFETTI
+===================================================== */
+
+const confettiCanvas =
+    document.getElementById("confettiCanvas");
+
+const confettiCtx =
+    confettiCanvas.getContext("2d");
+
+let confettiPieces = [];
+
+function resizeConfetti() {
+
+    confettiCanvas.width =
+        window.innerWidth;
+
+    confettiCanvas.height =
+        window.innerHeight;
+
+}
+
+window.addEventListener(
+    "resize",
+    resizeConfetti
+);
+
+resizeConfetti();
+
+
+function createConfetti() {
+
+    for (let i = 0; i < 100; i++) {
+
+        confettiPieces.push({
+
+            x:
+                window.innerWidth / 2,
+
+            y:
+                window.innerHeight * 0.45,
+
+            size:
+                Math.random() * 7 + 3,
+
+            speedX:
+                (Math.random() - 0.5) * 10,
+
+            speedY:
+                Math.random() * -10 - 4,
+
+            gravity:
+                0.25,
+
+            rotation:
+                Math.random() * 360
+
+        });
+
+    }
+
+}
+
+
+function animateConfetti() {
+
+    confettiCtx.clearRect(
+        0,
+        0,
+        confettiCanvas.width,
+        confettiCanvas.height
+    );
+
+    confettiPieces.forEach(function(piece) {
+
+        piece.x += piece.speedX;
+
+        piece.y += piece.speedY;
+
+        piece.speedY += piece.gravity;
+
+        piece.rotation += 5;
+
+        confettiCtx.save();
+
+        confettiCtx.translate(
+            piece.x,
+            piece.y
+        );
+
+        confettiCtx.rotate(
+            piece.rotation * Math.PI / 180
+        );
+
+        confettiCtx.fillStyle =
+            Math.random() > 0.5
+                ? "#ff3377"
+                : "#ffd166";
+
+        confettiCtx.fillRect(
+            -piece.size / 2,
+            -piece.size / 2,
+            piece.size,
+            piece.size
+        );
+
+        confettiCtx.restore();
+
+    });
+
+    confettiPieces =
+        confettiPieces.filter(function(piece) {
+
+            return piece.y <
+                window.innerHeight + 50;
+
+        });
+
+    requestAnimationFrame(animateConfetti);
+
+}
+
+animateConfetti();
 
 </script>
 
