@@ -1,48 +1,70 @@
-# 🎂 Happy Birthday Chandana 💖
+# 🎂 Happy Birthday Chandana ❤️
 
-A small interactive birthday surprise website made specially for:
+## A Special Birthday Surprise for My Baby Maa
 
-## ❤️ Chandana — My Baby Maa ❤️
+This is a personal interactive birthday website created specially for **Chandana**, whom I lovingly call **Baby Maa**.
 
-### Features
+The website is designed around our **4–5 years of memories, friendship, love, laughter, fights, care and unforgettable moments**.
 
-- 🎁 Surprise opening
+---
+
+## ❤️ About This Website
+
+This isn't just a birthday webpage.
+
+It is a small interactive journey through our bond.
+
+Chandana has been much more than one person in my life.
+
+She has been:
+
+- ❤️ My friend
+- 🥹 Like my mother
+- 📚 My teacher
+- 🧭 My guide
+- 😂 My partner in crazy moments
+- 💕 My cute-couple partner
+- 🌸 Someone who has been an important part of my life
+
+I call her **Baby Maa**.
+
+She calls me **Pucchu**.
+
+---
+
+## ✨ Features
+
+- 🎁 Interactive gift opening
+- 🔐 Secret PIN protection
+- 🕐 Live clock
 - 🎂 Birthday cake interaction
+- 🔥 Candle blowing
 - 🎉 Confetti animation
-- 📸 Personal photo gallery
-- 💌 Birthday letter
+- ❤️ Floating hearts
+- 📸 Personal photo memories
+- 🎈 Interactive birthday wishes
+- 🧩 Photo puzzle
+- ✨ Scratch-card surprise
+- 💌 Personal emotional birthday letter
 - 🎵 Background music
 - 📱 Mobile-friendly design
 - 🌐 GitHub Pages compatible
 
-### Folder Structure
+---
 
-birthday-website/
+## 📁 Repository Structure
 
-├── index.html  
-├── style.css  
-├── README.md  
-├── README.txt  
-├── song.mp3  
+```text
+birthday-gift/
+
+├── index.html
+├── style.css
+├── README.md
+├── README.txt
+├── song.mp3
+│
 └── photos/
-
     ├── photo1.jpg
     ├── photo2.jpg
     ├── photo3.jpg
     └── photo4.jpg
-
-### How to use
-
-1. Upload all files to a GitHub repository.
-2. Create a folder named `photos`.
-3. Upload your photos.
-4. Rename them:
-   - photo1.jpg
-   - photo2.jpg
-   - photo3.jpg
-   - photo4.jpg
-5. Upload your birthday song as `song.mp3`.
-6. Enable GitHub Pages.
-7. Share the generated website link.
-
-Made with ❤️ for Chandana.
